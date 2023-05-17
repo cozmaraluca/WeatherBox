@@ -1,0 +1,107 @@
+<?php
+//conectarea la baza de date
+mysql_connect("localhost","r64511gran_raluca","z93VuZHqr2vbTwd") or die ("Nu se poate conecta la serverul MySQL");
+mysql_select_db("r64511gran_date_senzori") or die("Nu se poate selecta baza de date");
+
+$query2=mysql_query("select id, senzor, locatie, umiditate, temperatura, timp from date_senzori ");
+$nr_inreg=mysql_num_rows($query2);
+
+echo "<div class=layer>";
+ //daca exista inregistrari
+if ($nr_inreg>0){
+
+ echo "<table >";
+ $coln=mysql_num_fields($query2); //nr. de campuri
+ echo"<tr bgcolor='silver'>";
+ 
+ for ($i=0; $i<$coln; $i++){
+ //numele câmpurilor ca si cap de tabel
+ $var=mysql_field_name($query2,$i);
+ echo "<th> $var </th>";
+ }
+ echo"</tr>";
+ 
+ while($row=mysql_fetch_row($query2)){
+ echo"<tr>";
+	 foreach ($row as $value1){
+		 	echo "<td>$value1</td>";}
+		 
+	/* $query4 = "SELECT nume FROM parinti";
+$result = mysql_query($query4);
+$i=0;
+$row2 = mysql_fetch_array($result);
+	  foreach ($row2 as $value){
+	 if($row2[$i]==$row2[$i++])
+	 {
+		 echo "<td rowspan=2 >$value</td>";
+	 }
+	$i++; 
+ }}*/
+ echo"</tr>";
+ }
+ 
+ echo"</table>";
+}
+
+else{ 
+ echo"<center>";
+ echo "Nu s-a gasit nici o inregistrare!!!";
+ echo"</center>";
+}
+
+mysql_close();
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>inserare_copii</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<style>
+	
+body {
+	
+ background-image: url("last.jpg");
+	background-repeat: no-repeat;
+  height: 100%;
+	background-size: cover;
+}
+	table{
+		width: 100%; 
+		border:2;
+		border-color:darkseagreen;
+		font:900;
+		font-size:26;
+		}
+		th{
+			background-color:darksalmon;
+  color: white;
+		}
+   h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+		.layer {
+    background-color: rgba(248, 247, 216, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+		
+		
+	</style>
+</head>
+
+<body>
+	
+	
+	
+
+</body>
+</html>
