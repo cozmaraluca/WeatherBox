@@ -14,8 +14,7 @@ Web și mobilă și furnizate utilizatorului care a trecut prin procesul de aute
 său. În cazul în care utilizatorul nu are un cont creat, există opțiunea de înregistrare, însă doar 
 utilizând codul unic și parola furnizate la achiziționarea produsului. Astfel, un cont poate fi 
 creat doar dacă utilizatorul deține deja stația meteorologică.
-După cum se poate observa în schema bloc a sistemului din figura 1.2, partea de hardware 
-constă în senzorii care măsoară valorile meteorologice și două plăci de dezvoltare care 
+Partea de hardware constă în senzorii care măsoară valorile meteorologice și două plăci de dezvoltare care 
 utilizează comunicarea serială pentru a transmite, respectiv recepționa datele, iar cea software 
 este constituită din baza de date , aplicația Web, aplicația mobilă și software-ul Arduino. 
 Componentele ansamblului comunică cu ajutorul firelor, internetului sau protocoalelor de 
@@ -29,8 +28,7 @@ unic pentru fiecare utilizator. Codul este transmis de la componentele hardware 
 programator.
 Structura sistemului este formată din componentele hardware, cele software și 
 conexiunile care leagă cele două componente.
-După cum se poate observa și în figura 1.2., senzorii măsoară parametri
-meteorologici precum: temperatura, umiditatea, indicele UV, presiunea atmosferică, calitatea 
+Senzorii măsoară parametri meteorologici precum: temperatura, umiditatea, indicele UV, presiunea atmosferică, calitatea 
 aerului și nivelul de precipitații. Pentru determinarea celui din urmă fiind utilizat un senzor 
 pentru măsurarea distanței și o formulă de calcul. Aceste valori vor fi transmise către 
 microcontroler-ul Arduino utilizând conexiunea prin fire jumper. Apoi, acesta le transmite prin 
