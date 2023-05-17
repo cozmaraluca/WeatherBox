@@ -1,5 +1,4 @@
 # WeatherBox
-
  Descrierea proiectului
 Stația meteorologică cu aplicație web și aplicație mobilă are următoarele 
 componente:
